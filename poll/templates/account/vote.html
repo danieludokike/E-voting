@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Vote {% endblock title %}
+
+{% block content %}
+               <!--Page Title-->
+
+               <section class="page-banner">
+
+                <div class="image-layer" style="background-image:url(https://res.cloudinary.com/daniela1/image/upload/v1686905173/vote_zh20ey.jpg);"></div>
+    
+    
+    
+                <div class="banner-inner">
+    
+                    <div class="auto-container">
+    
+                        <div class="inner-container clearfix">
+    
+                            <h1>Vote</h1>
+                            <h3>Logged in as {{request.user}}</h3>
+    
+                            <div class="page-nav">
+    
+                                <ul class="bread-crumb clearfix">
+    
+                                    <li><a href="{% url 'pollapp:home' %}">Home</a></li>
+    
+                                    <li><a href="{% url 'pollapp:home' %}">Sterling Poll</a></li>
+    
+                                    <li class="active">Vote</li>
+    
+                                </ul>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </section>
+
+                    <!--Team Section-->
+
+        <section class="team-section">
+
+            <div class="auto-container">
+
+                <div class="sec-title with-separator centered">
+
+                    <h2>Voting for {{category}}</h2>
+
+                    <div class="separator"><span class="cir c-1"></span><span class="cir c-2"></span><span
+                            class="cir c-3"></span></div>
+
+                    <div class="lower-text">Select and Vote for the candidate of your choice</div>
+                </div>
+
+
+
+                <div class="team-carousel owl-theme owl-carousel">
+
+                    <!--Team Block-->
+                    {% for candidate in candidates  %}
+                    <div class="team-block">
+
+                        <div class="inner-box">
+
+                            <div class="image-box">
+
+                                <figure class="image"><img style="width: 350px; height: 300px;" src="{{candidate.photo.url}}"
+                                        alt=""></figure>
+
+                                <div class="hover-box">
+
+                                    <div class="hover-inner">
+
+                                        <div class="hover-upper">
+
+                                            <h6>{{candidate.candidate_name}}</h6>
+
+                                        </div>
+
+                                        <div class="hover-lower">
+
+                                            <ul class="info">
+
+                                                <li><a href="#">Position: {{candidate.position}}</a></li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="lower-box">
+
+                                <h4><a href="#">Name: {{candidate.candidate_name}}</a></h4>
+
+                                <div class="designation">Position: {{candidate.position}}</div>
+                                <form method="post" action="{% url 'account:vote_view' candidate.id %}">
+                                    {% csrf_token %}
+
+                                    <div class="form-group">
+
+                                        <button type="submit" class="theme-btn btn-style-one"><span class="btn-title">Cast Your Vote</span></button>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </section>
+
+{% endblock content %}

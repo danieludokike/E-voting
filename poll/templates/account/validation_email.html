@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="images/favicon.png" rel="icon" />
+<title>Account created successfully</title>
+<meta name="author" content="harnishdesign.net">
+
+<!-- Web Fonts
+======================= -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900' type='text/css'>
+
+<!-- Stylesheet
+======================= -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<!-- Container -->
+<div class="container-fluid invoice-container"> 
+
+  <!-- Header -->
+  <header>
+    <div class="row align-items-center">
+      <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0"> 
+        <img id="logo" src="https://res.cloudinary.com/daniela1/image/upload/v1686917338/SterlingPoll_rahdsg.png" width="100%" alt="Koice" />
+      </div>
+      <div class="col-sm-5 text-center text-sm-end">
+      </div>
+    </div>
+    <hr>
+  </header>
+  <main>
+    <div>
+      <h3 style="text-align: center;">Account Validation Successful</h3>
+    </div>
+    <p>
+        Hello, {{name}}! We have successfully validated your account and you can now login and cast your voted. Below are your credentials
+        </p>
+    <div style="z-index:1000;" class="card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <td class="col-8"><strong></strong></td>
+                <td class="col-2 text-center"><strong></strong></td>
+                <td class="col-2 text-end"><strong></strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>username</td>
+                <td class="text-center"></td>
+                <td class="text-center">{{username}}</td>
+              </tr>
+            </tbody>
+			<tfoot class="card-footer">
+                <tr>
+                    <td>Password/Token</td>
+                    <td class="text-center"></td>
+                    <td class="text-center">{{token}}</td>
+                  </tr>
+			</tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+<footer style="background-color: #050d2a; height: 50px; margin-top: 10px; color: white; text-align: center;" class="page-footer font-small">
+<img src="https://res.cloudinary.com/daniela1/image/upload/v1686917321/SterlingPollbanner_cxqqio.png" />
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-white">Copyright:
+      <a style="" href="sterlingpoll.org">http://sterlingpoll.org</a>
+    </div>
+</footer>
+</div>
+
+</body>
+</html>
